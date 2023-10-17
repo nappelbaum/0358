@@ -53,13 +53,15 @@ if (checkEl != null) {
         for (let i = 0; i < links.length; i++) {
             let link = links[i];
             if (link.href.includes("kia.ru")) {
-                link.click();
+                setTimeout(() => {
+                    link.click();
+                }, getRandom(1500, 2500))
                 break;
             }
         }
 
         i++;
-        if (i <= 6) {
+        if (i <= 7) {
             window.scrollTo({
                 top: document.body.scrollHeight,
                 behavior: "smooth",
