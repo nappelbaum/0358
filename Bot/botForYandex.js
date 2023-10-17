@@ -37,13 +37,11 @@ if (checkEl != null) {
       let index = getRandom(0, links.length);
       let check = getRandom(0, 101);
 
-      if (check >= 80) {
+      if (check >= 70) {
         location.href = "https://ya.ru/";
       } else {
           if (links[index].href.includes("avtomir.ru")) {
-              setTimeout(() => {
                   links[index].click();
-              }, getRandom(500, 1500))
           }
       }
     }, getRandom(2500, 5000))
@@ -86,4 +84,3 @@ if (checkEl != null) {
 function getRandom (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
-
