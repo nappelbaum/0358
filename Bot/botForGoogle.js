@@ -39,7 +39,7 @@ if (checkEl != null) {
     setInterval(() => {
       let index = getRandom(0, links.length);
       let check = getRandom(0, 101);
-console.log(check);
+
       if (check >= 80) {
         location.href = "https://www.google.com/";
       } else {
