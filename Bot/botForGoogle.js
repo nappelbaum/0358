@@ -53,7 +53,9 @@ if (checkEl != null) {
         for (let i = 0; i < links.length; i++) {
             let link = links[i];
             if (link.href.includes("kia.ru")) {
-                link.click();
+                setTimeout(() => {
+                    link.click();
+                }, getRandom(2500, 5000))
                 break;
             }
         }
