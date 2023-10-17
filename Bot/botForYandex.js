@@ -5,7 +5,7 @@
 // @description  try to take over the world!
 // @author       AgafonovAS
 // @match        https://ya.ru/*
-// @match        https://avtomir.ru/*
+// @match        https://*.avtomir.ru/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
@@ -30,7 +30,7 @@ if (checkEl != null) {
     }
   }, 200)
 
-} else if (location.hostname.includes("avtomir")) {
+} else if (location.href.includes("avtomir.ru")) {
     //Работаем на целевом сайте
     console.log("Мы на целевом сайте!");
     setInterval(() => {
@@ -82,3 +82,4 @@ if (checkEl != null) {
 function getRandom (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
+
