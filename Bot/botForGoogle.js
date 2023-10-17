@@ -60,7 +60,10 @@ if (checkEl != null) {
 
         i++;
         if (i <= 6) {
-            window.scrollTo(0, document.body.scrollHeight);
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth",
+            });
             setTimeout(interval, getRandom(2500, 5000));
         }
         else location.href = "https://www.google.com/";
