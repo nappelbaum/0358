@@ -39,11 +39,14 @@ if (checkEl != null) {
 
       if (check >= 70) {
         location.href = "https://ya.ru/";
+      } else {
+          if (links[index].href.includes("avtomir.ru")) {
+              setTimeout(() => {
+                  links[index].click();
+              }, getRandom(500, 1500))
+          }
       }
-     if (links[index].href.includes("avtomir.ru")) {
-       links[index].click();
-      }
-    }, getRandom(3000, 5000))
+    }, getRandom(2500, 5000))
 
   } else if (document.querySelector(".Pager-ListItem") != null) {
     //Работаем на странице поисковой выдачи
@@ -83,3 +86,4 @@ if (checkEl != null) {
 function getRandom (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
+
