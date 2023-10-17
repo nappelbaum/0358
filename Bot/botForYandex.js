@@ -35,14 +35,15 @@ if (checkEl != null) {
     console.log("Мы на целевом сайте!");
     setInterval(() => {
       let index = getRandom(0, links.length);
+      let check = getRandom(0, 101);
 
-      if (getRandom(0, 101) >= 70) {
+      if (check >= 70) {
         location.href = "https://ya.ru/";
       }
      if (links[index].href.includes("avtomir.ru")) {
        links[index].click();
       }
-    }, getRandom(1000, 1500))
+    }, getRandom(3000, 5000))
 
   } else if (document.querySelector(".Pager-ListItem") != null) {
     //Работаем на странице поисковой выдачи
@@ -82,4 +83,3 @@ if (checkEl != null) {
 function getRandom (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
-
