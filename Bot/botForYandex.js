@@ -19,6 +19,7 @@ let keyword = keywords[getRandom(0, keywords.length)];
 
 //Работаем на главной странице
 if (checkEl != null) {
+  console.log("Работаем на главной странице");
   let i = 0;
   let timerId = setInterval(() => {
     input.value += keyword[i];
@@ -29,22 +30,23 @@ if (checkEl != null) {
     }
   }, 200)
 
-} else if (location.hostname == "avtomir.ru") {
+} else if (location.hostname.includes("avtomir")) {
     //Работаем на целевом сайте
     console.log("Мы на целевом сайте!");
     setInterval(() => {
       let index = getRandom(0, links.length);
 
-      if (getRandom(0, 101) >= 80) {
+      if (getRandom(0, 101) >= 70) {
         location.href = "https://ya.ru/";
       }
      if (links[index].href.includes("avtomir.ru")) {
        links[index].click();
       }
-    }, getRandom(2000, 5000))
+    }, getRandom(1000, 1500))
 
-  } else {
+  } else if (document.querySelector(".Pager-ListItem") != null) {
     //Работаем на странице поисковой выдачи
+    console.log("Работаем на странице поисковой выдачи");
     let nextPage = true;
     for (let i = 0; i < links.length; i++) {
       if (links[i].href.includes("avtomir.ru")) {
