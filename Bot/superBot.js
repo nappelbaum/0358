@@ -23,18 +23,24 @@ let sites = {"napli.ru": ["10 самых популярных шрифтов Goo
 let site = Object.keys(sites)[getRandom(0, Object.keys(sites).length)];
 let keywords = sites[site];
 let keyword = keywords[getRandom(0, keywords.length)];
-let systems = [{hostname: "ya.ru",
-               input: document.getElementsByName("text")[0],
-               checkEl: document.querySelector(".image-search"),
-               searchBtn: document.querySelector(".search3__button"),
-               currentPage: document.querySelector(".Pager-Item_current"),
-               nextBtn: document.querySelector(".Pager-Item_type_next")},
-              {hostname: "www.bing.com",
-               input: document.getElementsByName("q")[0],
-               checkEl: document.getElementById("search_icon"),
-               searchBtn: document.getElementById("search_icon"),
-               currentPage: document.querySelector(".sb_pagS"),
-               nextBtn: document.querySelector(".sb_pagN")}];
+let systems = [
+                {
+                 hostname: "ya.ru",
+                 input: document.getElementsByName("text")[0],
+                 checkEl: document.querySelector(".image-search"),
+                 searchBtn: document.querySelector(".search3__button"),
+                 currentPage: document.querySelector(".Pager-Item_current"),
+                 nextBtn: document.querySelector(".Pager-Item_type_next")
+                },
+                {
+                 hostname: "www.bing.com",
+                 input: document.getElementsByName("q")[0],
+                 checkEl: document.getElementById("search_icon"),
+                 searchBtn: document.getElementById("search_icon"),
+                 currentPage: document.querySelector(".sb_pagS"),
+                 nextBtn: document.querySelector(".sb_pagN")
+                }
+            ];
 
 let system = systems[0];
 if (systems.some((sys) => sys.hostname == location.hostname)) {
