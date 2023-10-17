@@ -37,7 +37,7 @@ if (checkEl != null) {
       let index = getRandom(0, links.length);
       let check = getRandom(0, 101);
 
-      if (check >= 70) {
+      if (check >= 80) {
         location.href = "https://ya.ru/";
       } else {
           if (links[index].href.includes("avtomir.ru")) {
