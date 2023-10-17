@@ -10,6 +10,8 @@
 // @grant        none
 // ==/UserScript==
 
+//РАБОТАЕТ ТОЛЬКО С ОТКРЫТОЙ ВКЛАДКОЙ (( Есть бот для яндекса
+
 let input = document.getElementsByName("q")[0];
 let checkEl = document.querySelector("input[name='btnK']");
 let links = document.links;
