@@ -5,7 +5,7 @@
 // @description  try to take over the world!
 // @author       AgafonovAS
 // @match        https://ya.ru/*
-// @match        https://www.drive2.ru/*
+// @match        https://avtomir.ru/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
@@ -29,7 +29,7 @@ if (checkEl != null) {
     }
   }, 200)
 
-} else if (location.hostname == "www.drive2.ru") {
+} else if (location.hostname == "avtomir.ru") {
     //Работаем на целевом сайте
     console.log("Мы на целевом сайте!");
     setInterval(() => {
@@ -37,7 +37,8 @@ if (checkEl != null) {
 
       if (getRandom(0, 101) >= 80) {
         location.href = "https://ya.ru/";
-      } else if (links[index].href.includes("drive2.ru")) {
+      }
+     if (links[index].href.includes("avtomir.ru")) {
        links[index].click();
       }
     }, getRandom(2000, 5000))
@@ -46,7 +47,7 @@ if (checkEl != null) {
     //Работаем на странице поисковой выдачи
     let nextPage = true;
     for (let i = 0; i < links.length; i++) {
-      if (links[i].href.includes("drive2.ru")) {
+      if (links[i].href.includes("avtomir.ru")) {
         let ylink = links[i];
         nextPage = false;
         console.log("Нашел строку!" + ylink);
@@ -79,4 +80,3 @@ if (checkEl != null) {
 function getRandom (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
-
