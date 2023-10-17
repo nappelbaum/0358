@@ -10,6 +10,8 @@
 // @grant        none
 // ==/UserScript==
 
+// Прокрутка работает только в открытой кладке((
+
 let input = document.getElementsByName("q")[0];
 let checkEl = document.querySelector("input[name='btnK']");
 let links = document.links;
