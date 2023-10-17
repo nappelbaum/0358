@@ -48,7 +48,7 @@ if (checkEl != null) {
 
   } else {
     //Работаем на странице поисковой выдачи
-    let i = 0;
+    let page = 0;
     function interval() {
         for (let i = 0; i < links.length; i++) {
             let link = links[i];
@@ -60,8 +60,8 @@ if (checkEl != null) {
             }
         }
 
-        i++;
-        if (i <= 7) {
+        page++;
+        if (page <= 7) {
             window.scrollTo({
                 top: document.body.scrollHeight,
                 behavior: "smooth",
