@@ -10,8 +10,6 @@
 // @grant        none
 // ==/UserScript==
 
-// Прокрутка работает только в открытой вкладке((
-
 let input = document.getElementsByName("q")[0];
 let checkEl = document.querySelector("input[name='btnK']");
 let links = document.links;
@@ -37,16 +35,19 @@ if (checkEl != null) {
 } else if (location.hostname == "www.kia.ru") {
     //Работаем на целевом сайте
     console.log("Мы на целевом сайте!");
+
     setInterval(() => {
       let index = getRandom(0, links.length);
-
-      if (getRandom(0, 101) >= 80) {
+      let check = getRandom(0, 101);
+console.log(check);
+      if (check >= 80) {
         location.href = "https://www.google.com/";
+      } else {
+          if (links[index].href.includes("kia.ru")) {
+                  links[index].click();
+          }
       }
-     if (links[index].href.includes("kia.ru")) {
-       links[index].click();
-      }
-    }, getRandom(2000, 5000))
+    }, getRandom(2500, 5000))
 
   } else {
     //Работаем на странице поисковой выдачи
